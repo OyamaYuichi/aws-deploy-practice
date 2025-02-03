@@ -8,7 +8,7 @@ def health_check():
 
 @app.route("/")
 def hello():
-    return "こんにちは、大山君！"
+    return "こんにちは、jsonify！"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
