@@ -17,7 +17,7 @@ phases:
   post_build:
     commands:
       - echo "Pushing the Docker image to Amazon ECR..."
-      - printf '[{"name":"%s","imageUri":"%s"}]\n' "${ECR_REPOSITORY}" "${REPO_URI}:${IMAGE_TAG}" > imagedefinitions.json
+      - printf '[{"name":"%s","imageUri":"%s"}]\n' "${ECS_CONTAINER_NAME}" "${REPO_URI}:${IMAGE_TAG}" > imagedefinitions.json
       - docker push "${REPO_URI}:${IMAGE_TAG}"
       # - echo "Image pushed: ${REPO_URI}:${IMAGE_TAG}"
 
