@@ -20,6 +20,6 @@ phases:
       - docker push "${REPO_URI}:${IMAGE_TAG}"
       # - echo "Image pushed: ${REPO_URI}:${IMAGE_TAG}"
 
-  artifacts:
-    files:
-      - '**/*'
+artifacts:
+  files:
+    - '**/*'
