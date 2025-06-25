@@ -1,0 +1,54 @@
+{
+  "containerDefinitions": [
+      {
+          "name": "cdk-practice-local-ecs-container-web",
+          "image": "<IMAGE1_NAME>",
+          "cpu": 0,
+          "memory": 256,
+          "links": [],
+          "portMappings": [
+              {
+                  "containerPort": 5000,
+                  "hostPort": 5000,
+                  "protocol": "tcp"
+              }
+          ],
+          "essential": true,
+          "entryPoint": [],
+          "command": [],
+          "environment": [],
+          "environmentFiles": [],
+          "mountPoints": [],
+          "volumesFrom": [],
+          "secrets": [],
+          "dnsServers": [],
+          "dnsSearchDomains": [],
+          "extraHosts": [],
+          "dockerSecurityOptions": [],
+          "dockerLabels": {},
+          "ulimits": [],
+          "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                  "awslogs-group": "cdk-practice-local-log-group",
+                  "awslogs-region": "<REGION>",
+                  "awslogs-stream-prefix": "cdk-practice-local-web-container"
+              },
+              "secretOptions": []
+          },
+          "systemControls": [],
+          "credentialSpecs": []
+      }
+  ],
+  "family": "cdk-practice-local-task",
+  "taskRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/cdk-practice-local-task-role",
+  "executionRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/cdk-practice-local-ecs-role",
+  "networkMode": "awsvpc",
+  "volumes": [],
+  "placementConstraints": [],
+  "requiresCompatibilities": [
+      "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512"
+}
